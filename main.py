@@ -24,7 +24,7 @@ led_2 = pyb.LED(2)
 #calibration
 s_up.angle(-12)
 
-def use_btn_w_servo(servo,duration=8000,inverse=False):
+def use_btn_w_servo(servo,duration=18000,inverse=False):
     if inverse:
         end_pos = -30
     else:
@@ -60,7 +60,7 @@ while loop:
     else:
         t_border = w_times[w_mode]
         if ((t_border[0][0] < t_border[1][0]) and(t_border[0][0] <= now[0] <= t_border[1][0])) or \
-            ((t_border[0][0] > t_border[1][0]) and (t_border[0][0] <= now[0] or now[0] <= t_border[1][1])):
+            ((t_border[0][0] > t_border[1][0]) and (t_border[0][0] <= now[0] or now[0] <= t_border[1][0])):
             #hours only, ignoring minutes for now
             led_b.toggle()
             if w_status == 1:
